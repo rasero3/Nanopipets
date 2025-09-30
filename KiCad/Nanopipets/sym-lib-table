@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "New_Library")(type "KiCad")(uri "${KIPRJMOD}/New_Library.kicad_sym")(options "")(descr ""))
+  (lib (name "WE-RJ45_7499111221A")(type "KiCad")(uri "${KIPRJMOD}/WE-RJ45_7499111221A.kicad_sym")(options "")(descr ""))
+)

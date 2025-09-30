@@ -1,0 +1,20 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity NanoPipets is
+	port(clk: in std_logic;
+			rx: in std_logic;
+			tx: out std_logic;);
+end NanoPipets;
+
+architecture comp of NanoPipets is
+
+signal out: std_logic;
+
+begin
+	process(clk)
+	begin
+	end process;
+end comp;
+			
