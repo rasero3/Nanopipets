@@ -9,7 +9,7 @@ entity uart_receive is
 			DAC_SCLK_rec: buffer std_logic;
 			DAC_SDI_rec: out std_logic;
 			DAC_CS_rec: out std_logic;
-			buffer_uart_rec: buffer std_logic_vector(23 downto 0);
+			buffer_uart_rec: buffer std_logic_vector(23 downto 0):=(others=>'0');
 			estado_uart: buffer integer range 0 to 3:=0;
 			flag_uart: buffer std_logic:='0');
 			
@@ -28,8 +28,8 @@ architecture comp of uart_receive is
 	signal uart_count: integer range 0 to BIT_TICKS+(BIT_TICKS/2):=0;
 	signal flag_byte_finish: std_logic:='0';
 	signal byte_count: integer range 0 to 3:=0;
-
-	
+	signal position: integer range 0 to 65535:=0;
+	signal buffer_objetivo: std_logic_vector (15 downto 0):=(others=>'0');
 	
 begin
 	DAC_SCLK_rec<=clk_rec when (flag_clk = '1') else '0';
@@ -101,11 +101,17 @@ begin
 					if uart_count < BIT_TICKS+(BIT_TICKS/2) then
 						uart_count<=uart_count+1;
 					else
-						buffer_uart_rec(byte_count*8+bit_count)<=UART_RX_rec;
-						estado_uart<=1;
-						uart_count<=0;
-						bit_count<=bit_count+1;
-						
+						if byte_count < 1 then 
+							buffer_uart_rec(byte_count*8+bit_count)<=UART_RX_rec;
+							estado_uart<=1;
+							uart_count<=0;
+							bit_count<=bit_count+1;
+						else 
+							buffer_objetivo((byte_count-1)*8+bit_count)<=UART_RX_rec;
+							estado_uart<=1;
+							uart_count<=0;
+							bit_count<=bit_count+1;
+						end if;
 					end if;
 					
 				when 1 =>
@@ -114,13 +120,15 @@ begin
 					if uart_count < BIT_TICKS then
 						uart_count<=uart_count+1;
 					else
-						if bit_count < 8 then
+						if bit_count < 8 and byte_count < 1 then
 							buffer_uart_rec(byte_count*8+bit_count)<=UART_RX_rec;
-							
 							bit_count <=bit_count + 1;
 							uart_count<=0;
+						elsif bit_count < 8 and byte_count > 0 then
+							buffer_objetivo((byte_count-1)*8+bit_count) <= UART_RX_rec;
+							uart_count<=0;
+							bit_count <=bit_count + 1;
 						else
-							
 							estado_uart<=2;
 							byte_count<=byte_count+1;
 							uart_count<=0;
@@ -142,11 +150,17 @@ begin
 					end if;
 					
 				when 3 =>
-					if cont < 24 then
-						flag_clk<='1';
-						DAC_CS_rec<='0';
-						DAC_SDI_rec<=buffer_uart_rec(cont);
-						cont<=cont+1;
+					if unsigned(buffer_uart_rec(23 downto 8)) < unsigned(buffer_objetivo) then
+						if cont < 24 then
+							flag_clk<='1';
+							DAC_CS_rec<='0';
+							DAC_SDI_rec<=buffer_uart_rec(cont);
+							cont<=cont+1;
+						else
+							buffer_uart_rec(23 downto 8) <= std_logic_vector(unsigned(buffer_uart_rec(23 downto 8))+1);
+							cont<=0;
+							DAC_CS_rec<='1';
+						end if;
 					else
 						buffer_uart_rec<=(others=>'0');
 						flag_clk<='0';
@@ -157,7 +171,6 @@ begin
 						flag_uart<='0';
 						byte_count<=0;
 					end if;
-					
 				end case;
 				
 			end if;
