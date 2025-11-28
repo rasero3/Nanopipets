@@ -64,111 +64,42 @@ uut: NanoPipets port map
 		
 		UART_RX_TB<='0'; --bit 0
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 1
+		UART_RX_TB<='1'; --bit 1
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --bit 2
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 3
+		UART_RX_TB<='1'; --bit 3
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 4
+		UART_RX_TB<='0'; --bit 4
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 5
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 6
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 7
-		wait for 8680 ns;
-		
-		UART_RX_TB<='1';
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --start bit
-		wait for 8680 ns;
-		
-		UART_RX_TB<='1'; --bit 8
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 9
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 10
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 11
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 12
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 13
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 14
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 15
-		wait for 8680 ns;
-		
-
-		UART_RX_TB<='1';
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --start bit
-		wait for 8680 ns;
-
-		
-		UART_RX_TB<='1'; --bit 16
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 17
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 18
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 19
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 20
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 21
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 22
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 23
-		wait for 8680 ns;
-
-		
-		UART_RX_TB<='1'; --end bit
-		wait for 1 us;
-		
-		UART_RX_TB<='0'; --start bit
-		wait for 8680 ns;
-		
-		UART_RX_TB<='0'; --bit 0
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 1
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 2
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 3
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 4
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 5
+		UART_RX_TB<='1'; --bit 5
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --bit 6
 		wait for 8680 ns;
 		UART_RX_TB<='1'; --bit 7
 		wait for 8680 ns;
 		
+		
 		UART_RX_TB<='1';
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --start bit
 		wait for 8680 ns;
 		
-		UART_RX_TB<='1'; --bit 8
+		UART_RX_TB<='0'; --bit 8
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 9
+		UART_RX_TB<='1'; --bit 9
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 10
+		UART_RX_TB<='0'; --bit 10
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 11
+		UART_RX_TB<='1'; --bit 11
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 12
+		UART_RX_TB<='0'; --bit 12
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 13
+		UART_RX_TB<='1'; --bit 13
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 14
+		UART_RX_TB<='0'; --bit 14
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 15
+		UART_RX_TB<='1'; --bit 15
 		wait for 8680 ns;
 		
 
@@ -177,36 +108,33 @@ uut: NanoPipets port map
 		UART_RX_TB<='0'; --start bit
 		wait for 8680 ns;
 
-		
-		UART_RX_TB<='1'; --bit 16
+		UART_RX_TB<='0'; --bit 16
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --bit 17
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 18
+		UART_RX_TB<='0'; --bit 18
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 19
+		UART_RX_TB<='1'; --bit 19
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 20
+		UART_RX_TB<='0'; --bit 20
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --bit 21
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 22
+		UART_RX_TB<='0'; --bit 22
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --bit 23
 		wait for 8680 ns;
-
 		
-		UART_RX_TB<='1'; --end bit
-		wait for 1 us;
-		
+		UART_RX_TB<='1';
+		wait for 8680 ns;
 		UART_RX_TB<='0'; --start bit
 		wait for 8680 ns;
 		
-		UART_RX_TB<='0'; --bit 0
+		UART_RX_TB<='1'; --bit 0
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --bit 1
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 2
+		UART_RX_TB<='1'; --bit 2
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --bit 3
 		wait for 8680 ns;
@@ -219,75 +147,6 @@ uut: NanoPipets port map
 		UART_RX_TB<='0'; --bit 7
 		wait for 8680 ns;
 		
-		UART_RX_TB<='1';
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --start bit
-		wait for 8680 ns;
-		
-		UART_RX_TB<='1'; --bit 8
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 9
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 10
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 11
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 12
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 13
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 14
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 15
-		wait for 8680 ns;
-		
-
-		UART_RX_TB<='1';
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --start bit
-		wait for 8680 ns;
-
-		
-		UART_RX_TB<='1'; --bit 16
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 17
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 18
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 19
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 20
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 21
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 22
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 23
-		wait for 8680 ns;
-
-		
-		UART_RX_TB<='1'; --end bit
-		wait for 1 us;
-		
-		UART_RX_TB<='0'; --start bit
-		wait for 8680 ns;
-		
-		UART_RX_TB<='0'; --bit 0
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 1
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 2
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 3
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 4
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 5
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 6
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 7
-		wait for 8680 ns;
 		
 		UART_RX_TB<='1';
 		wait for 8680 ns;
@@ -317,46 +176,21 @@ uut: NanoPipets port map
 		UART_RX_TB<='0'; --start bit
 		wait for 8680 ns;
 
-		
 		UART_RX_TB<='1'; --bit 16
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --bit 17
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 18
+		UART_RX_TB<='0'; --bit 18
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 19
+		UART_RX_TB<='1'; --bit 19
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 20
+		UART_RX_TB<='0'; --bit 20
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --bit 21
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 22
+		UART_RX_TB<='0'; --bit 22
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --bit 23
-		wait for 8680 ns;
-
-		
-		UART_RX_TB<='1'; --end bit
-		wait for 1 us;
-		
-		UART_RX_TB<='0'; --start bit
-		wait for 8680 ns;
-		
-		UART_RX_TB<='0'; --bit 0
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 1
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 2
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 3
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 4
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 5
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 6
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 7
 		wait for 8680 ns;
 		
 		UART_RX_TB<='1';
@@ -364,62 +198,15 @@ uut: NanoPipets port map
 		UART_RX_TB<='0'; --start bit
 		wait for 8680 ns;
 		
-		UART_RX_TB<='1'; --bit 8
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 9
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 10
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 11
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 12
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 13
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 14
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 15
-		wait for 8680 ns;
-		
-
-		UART_RX_TB<='1';
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --start bit
-		wait for 8680 ns;
-
-		
-		UART_RX_TB<='1'; --bit 16
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 17
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 18
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 19
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 20
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 21
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 22
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 23
-		wait for 8680 ns;
-
-		
-		UART_RX_TB<='1'; --end bit
-		wait for 1 us;
-		UART_RX_TB<='0'; --start bit
-		wait for 8680 ns;
-		
 		UART_RX_TB<='0'; --bit 0
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 1
+		UART_RX_TB<='1'; --bit 1
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --bit 2
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 3
+		UART_RX_TB<='1'; --bit 3
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 4
+		UART_RX_TB<='0'; --bit 4
 		wait for 8680 ns;
 		UART_RX_TB<='1'; --bit 5
 		wait for 8680 ns;
@@ -428,164 +215,94 @@ uut: NanoPipets port map
 		UART_RX_TB<='1'; --bit 7
 		wait for 8680 ns;
 		
+		
 		UART_RX_TB<='1';
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --start bit
 		wait for 8680 ns;
 		
-		UART_RX_TB<='1'; --bit 8
+		UART_RX_TB<='0'; --bit 8
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 9
+		UART_RX_TB<='1'; --bit 9
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 10
+		UART_RX_TB<='0'; --bit 10
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 11
+		UART_RX_TB<='1'; --bit 11
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 12
+		UART_RX_TB<='0'; --bit 12
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 13
+		UART_RX_TB<='1'; --bit 13
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 14
+		UART_RX_TB<='0'; --bit 14
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 15
+		UART_RX_TB<='1'; --bit 15
 		wait for 8680 ns;
 		
-
 		UART_RX_TB<='1';
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --start bit
 		wait for 8680 ns;
 
-		
-		UART_RX_TB<='1'; --bit 16
+		UART_RX_TB<='0'; --bit 16
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 17
+		UART_RX_TB<='1'; --bit 17
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 18
+		UART_RX_TB<='0'; --bit 18
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 19
+		UART_RX_TB<='1'; --bit 19
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 20
+		UART_RX_TB<='0'; --bit 20
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --bit 21
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 22
+		UART_RX_TB<='0'; --bit 22
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --bit 23
 		wait for 8680 ns;
-
 		
-		UART_RX_TB<='1'; --end bit
-		wait for 1 us;
+		UART_RX_TB<='1';
+		wait for 8680 ns;
 		UART_RX_TB<='0'; --start bit
 		wait for 8680 ns;
 		
 		UART_RX_TB<='0'; --bit 0
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 1
+		UART_RX_TB<='1'; --bit 1
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --bit 2
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 3
+		UART_RX_TB<='1'; --bit 3
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 4
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 5
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 6
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 7
-		wait for 8680 ns;
-		
-		UART_RX_TB<='1';
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --start bit
-		wait for 8680 ns;
-		
-		UART_RX_TB<='1'; --bit 8
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 9
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 10
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 11
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 12
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 13
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 14
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 15
-		wait for 8680 ns;
-		
-
-		UART_RX_TB<='1';
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --start bit
-		wait for 8680 ns;
-
-		
-		UART_RX_TB<='1'; --bit 16
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 17
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 18
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 19
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 20
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 21
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 22
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 23
-		wait for 8680 ns;
-
-		
-		UART_RX_TB<='1'; --end bit
-		wait for 1 us;
-		UART_RX_TB<='0'; --start bit
-		wait for 8680 ns;
-		
-		UART_RX_TB<='0'; --bit 0
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 1
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 2
-		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 3
-		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 4
+		UART_RX_TB<='0'; --bit 4
 		wait for 8680 ns;
 		UART_RX_TB<='1'; --bit 5
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 6
+		UART_RX_TB<='0'; --bit 6
 		wait for 8680 ns;
 		UART_RX_TB<='1'; --bit 7
 		wait for 8680 ns;
 		
+		
 		UART_RX_TB<='1';
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --start bit
 		wait for 8680 ns;
 		
-		UART_RX_TB<='1'; --bit 8
+		UART_RX_TB<='0'; --bit 8
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 9
+		UART_RX_TB<='1'; --bit 9
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 10
+		UART_RX_TB<='0'; --bit 10
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 11
+		UART_RX_TB<='1'; --bit 11
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 12
+		UART_RX_TB<='0'; --bit 12
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 13
+		UART_RX_TB<='1'; --bit 13
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 14
+		UART_RX_TB<='0'; --bit 14
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 15
+		UART_RX_TB<='1'; --bit 15
 		wait for 8680 ns;
 		
 
@@ -594,24 +311,293 @@ uut: NanoPipets port map
 		UART_RX_TB<='0'; --start bit
 		wait for 8680 ns;
 
+		UART_RX_TB<='1'; --bit 16
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 17
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 18
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 19
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 20
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 21
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 22
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 23
+		wait for 8680 ns;
 		
+		UART_RX_TB<='1';
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --start bit
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 0
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 1
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 2
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 3
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 4
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 5
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 6
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 7
+		wait for 8680 ns;
+		
+		
+		UART_RX_TB<='1';
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --start bit
+		wait for 8680 ns;
+		
+		UART_RX_TB<='0'; --bit 8
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 9
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 10
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 11
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 12
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 13
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 14
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 15
+		wait for 8680 ns;
+		
+
+		UART_RX_TB<='1';
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --start bit
+		wait for 8680 ns;
+
+		UART_RX_TB<='0'; --bit 16
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 17
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 18
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 19
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 20
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 21
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 22
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 23
+		wait for 8680 ns;
+		
+		UART_RX_TB<='1';
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --start bit
+		wait for 8680 ns;
+		
+		UART_RX_TB<='0'; --bit 0
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 1
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 2
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 3
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 4
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 5
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 6
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 7
+		wait for 8680 ns;
+		
+		
+		UART_RX_TB<='1';
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --start bit
+		wait for 8680 ns;
+		
+		UART_RX_TB<='0'; --bit 8
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 9
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 10
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 11
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 12
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 13
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 14
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 15
+		wait for 8680 ns;
+		
+
+		UART_RX_TB<='1';
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --start bit
+		wait for 8680 ns;
+
 		UART_RX_TB<='1'; --bit 16
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --bit 17
 		wait for 8680 ns;
 		UART_RX_TB<='1'; --bit 18
 		wait for 8680 ns;
-		UART_RX_TB<='0'; --bit 19
+		UART_RX_TB<='1'; --bit 19
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 20
+		UART_RX_TB<='0'; --bit 20
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --bit 21
 		wait for 8680 ns;
-		UART_RX_TB<='1'; --bit 22
+		UART_RX_TB<='0'; --bit 22
 		wait for 8680 ns;
 		UART_RX_TB<='0'; --bit 23
 		wait for 8680 ns;
+		
+		UART_RX_TB<='1';
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --start bit
+		wait for 8680 ns;
+		
+		UART_RX_TB<='0'; --bit 0
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 1
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 2
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 3
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 4
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 5
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 6
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 7
+		wait for 8680 ns;
+		
+		
+		UART_RX_TB<='1';
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --start bit
+		wait for 8680 ns;
+		
+		UART_RX_TB<='0'; --bit 8
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 9
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 10
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 11
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 12
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 13
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 14
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 15
+		wait for 8680 ns;
+		
 
+		UART_RX_TB<='1';
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --start bit
+		wait for 8680 ns;
+
+		UART_RX_TB<='0'; --bit 16
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 17
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 18
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 19
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 20
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 21
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 22
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 23
+		wait for 8680 ns;
+		
+		UART_RX_TB<='1';
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --start bit
+		wait for 8680 ns;
+		
+		UART_RX_TB<='0'; --bit 0
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 1
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 2
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 3
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 4
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 5
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 6
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 7
+		wait for 8680 ns;
+		
+		
+		UART_RX_TB<='1';
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --start bit
+		wait for 8680 ns;
+		
+		UART_RX_TB<='0'; --bit 8
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 9
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 10
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 11
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 12
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 13
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 14
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 15
+		wait for 8680 ns;
+		
+
+		UART_RX_TB<='1';
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --start bit
+		wait for 8680 ns;
+
+		UART_RX_TB<='1'; --bit 16
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 17
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 18
+		wait for 8680 ns;
+		UART_RX_TB<='1'; --bit 19
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 20
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 21
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 22
+		wait for 8680 ns;
+		UART_RX_TB<='0'; --bit 23
+		wait for 8680 ns;
 		
 		UART_RX_TB<='1'; --end bit
 		wait;
