@@ -29,17 +29,22 @@ architecture comp of uart_receive is
 	constant BIT_TICKS: integer:= CLK_FREQ / BAUD_RATE;
 	constant FSCV_TICKS: integer:= CLK_FREQ/FSCV;
 	
-	type buffer_array is array (0 to 7) of std_logic_vector (15 downto 0);
-	signal matrix_goal, current_vector: buffer_array:=(others=>(others=>'0'));
-	signal flag_clk, start_ramp: std_logic:='0';
+	type buffer_array is array (0 to 7) of std_logic_vector (23 downto 0);
+	type rampa_state is (subir, bajar, esperar);
+	type rampa_array is array (0 to 7) of rampa_state;
+	signal rampa: rampa_array:=(others=>subir);
+ 	signal matrix_goal, current_vector: buffer_array:=(others=>(others=>'0'));
+	signal flag_clk, start_ramp, ramp_active: std_logic:='0';
 	signal count: integer range 0 to 24:=0;
 	signal estado: integer range 0 to 1:=0;
 	signal RX_prev: std_logic;
+	signal send: integer range 0 to 2:=0;
 	signal uart_count: integer range 0 to BIT_TICKS+(BIT_TICKS/2):=0;
-	signal byte_count, rampa: integer range 0 to 3:=0;
+	signal byte_count: integer range 0 to 3:=0;
 	signal bit_count, channel_count: integer range 0 to 8:=0;
 	signal index: integer range 0 to 16;
-	signal FSCV_count:integer range 0 to FSCV_TICKS:=0;
+	signal FSCV_count:integer range 0 to FSCV_TICKS:=FSCV_TICKS-1;
+	signal addr_byte: std_logic_vector(3 downto 0);
 	signal flag_ramp_end:std_logic_vector (7 downto 0);
 	
 begin
@@ -48,7 +53,6 @@ begin
 	process(clk_rec)
 
 	begin
-	
 	if rising_edge(clk_rec) then
 		RX_prev<=UART_RX_rec;
 		if (UART_RX_rec = '0' and RX_prev = '1') then
@@ -63,6 +67,7 @@ begin
 				DAC_SDI_rec<=sync(23-count);
 				count<= count + 1;
 			else
+				report "CONFIG ENVIADA";
 				count<=0;
 				flag_clk<='0';
 				DAC_CS_rec<='1';
@@ -78,6 +83,7 @@ begin
 		when 0=>
 			
 			if flag_uart = '1' then	
+				start_ramp<='0';
 				if uart_count < BIT_TICKS+(BIT_TICKS/2) then
 					uart_count<=uart_count+1;
 				else
@@ -85,8 +91,6 @@ begin
 						report "Numero inesperado encontrado";
 						uart_count<=0;
 					else
-						report "Bit numero: " & integer'image(bit_count) & " byte_numero: " & integer'image(byte_count);
-						report "El bit vale: " & std_logic'image(UART_RX_rec);
 						buffer_uart_rec(byte_count*8+bit_count)<=UART_RX_rec;
 						estado_uart<=1;
 						uart_count<=0;
@@ -101,8 +105,6 @@ begin
 				if uart_count < BIT_TICKS then
 					uart_count<=uart_count+1;
 				else
-					report "Bit numero: " & integer'image(bit_count) & " byte_numero: " & integer'image(byte_count);
-					report "El bit vale: " & std_logic'image(UART_RX_rec);
 					buffer_uart_rec(byte_count*8 + bit_count)<=UART_RX_rec;
 					uart_count<=0;
 					bit_count<=bit_count+1;
@@ -122,6 +124,7 @@ begin
 				estado_uart<=3;
 				byte_count<=0;
 				bit_count<=0;
+				count<=0;
 			end if;
 			
 		when 3=>
@@ -130,77 +133,100 @@ begin
 				uart_count<=uart_count+1;
 			else
 				uart_count<=0;
-				index<=to_integer(unsigned(buffer_uart_rec(19 downto 16)));
-				if channel_count < 8 then
-					--matrix_goal(index)<=buffer_uart_rec(15 downto 0);
+				if channel_count < 7 then
+					current_vector(channel_count)(23 downto 16)<=buffer_uart_rec(23 downto 16);
+					matrix_goal(channel_count)<=buffer_uart_rec;
 					estado_uart<=0;
-					report "indice: " & integer'image(index);
-				else
-					channel_count<=0;
+					channel_count<=channel_count+1;
+					report "almacenado el canal: " & integer'image(channel_count);
+				elsif channel_count = 7 then
+					current_vector(channel_count)(23 downto 16)<=buffer_uart_rec(23 downto 16);
+					report "almacenado el canal: " & integer'image(channel_count);
+					matrix_goal(channel_count)<=buffer_uart_rec;
+					estado_uart<=0;
 					start_ramp<='1';
+					report "se empiezan las rampas";
 				end if;
 			end if;
 		end case;
 		
 		if start_ramp = '1' then
+			ramp_active <='1';
+			channel_count<=0;
+		end if;
+		
+		if ramp_active = '1' then
 			if FSCV_count < FSCV_TICKS then
 				FSCV_count<=FSCV_count +1;
 			else
 				flag_ramp_end<=(others=>'0');
-				rampa<=0;
+				rampa<=(others=>subir);
 				FSCV_count<=0;
 			end if;
 			
-			case rampa is
-			when 0=> --subir
+			case send is
+			when 0=>
 				if channel_count < 8 then
-					if flag_ramp_end(channel_count)='1' then
-						channel_count<=channel_count+1;
-					else
-						if current_vector(channel_count) < matrix_goal(channel_count) then --esta por debajo del pico
-							if count < 24 then --envia y pasa al siguiente canal
+					case rampa(channel_count) is
+					when subir=> --subir
+						if flag_ramp_end(channel_count)='1' then
+							channel_count<=channel_count+1;
+						else
+							if current_vector(channel_count) < matrix_goal(channel_count) then --esta por debajo del pico
+								if count < 24 then --envia y pasa al siguiente canal
+									DAC_CS_rec<='0';
+									flag_clk<='1';
+									DAC_SDI_rec<=current_vector(channel_count)(23-count); 
+									count<=count+1;
+								else
+									report "se ha actualizado un canal";
+									current_vector(channel_count)<=std_logic_vector(unsigned(current_vector(channel_count))+1);--al enviarlo se establece el siguiente valor
+									DAC_CS_rec<='1';
+									flag_clk<='0';
+									count<=0;
+									channel_count<=channel_count+1;
+								end if;
+							else --llega al pico
+								report "se ha llegado al pico del canal: " & integer'image(channel_count);
+								rampa(channel_count)<=bajar;--bajar
+								matrix_goal(channel_count)(15 downto 0)<=(others=>'0');--establecer el siguiente objetivo a 0
+							end if;
+						end if;
+					
+					when bajar=>--bajar
+						if current_vector(channel_count) > matrix_goal(channel_count) then
+							if count < 24 then
 								DAC_CS_rec<='0';
 								flag_clk<='1';
-								DAC_SDI_rec<=current_vector(channel_count)(count); 
+								DAC_SDI_rec<=current_vector(channel_count)(23-count); 
 								count<=count+1;
 							else
-								current_vector(channel_count)<=std_logic_vector(unsigned(current_vector(channel_count))+1);--al enviarlo se establece el siguiente valor
+								current_vector(channel_count)<=std_logic_vector(unsigned(current_vector(channel_count))-1);--al enviarlo se establece el siguiente valor
 								DAC_CS_rec<='1';
 								flag_clk<='0';
 								count<=0;
 								channel_count<=channel_count+1;
 							end if;
-						else --llega al pico
-							rampa<=1;--bajar
-							matrix_goal(channel_count)<=(others=>'0');--establecer el siguiente objetivo a 0
+						else--fin de la rampa
+							rampa(channel_count)<=esperar;
+							report "fin de la rampa: " & integer'image(channel_count);
+							flag_ramp_end(channel_count)<='1';
+							channel_count<=channel_count+1;
+							
 						end if;
-					end if;
-				else --ha actualizado todos los canales
-					rampa<=2;--trigger
-					channel_count<=0;
-				end if;
-			
-			when 1=>--bajar
-				if current_vector(channel_count) > matrix_goal(channel_count) then
-					if count < 24 then
-						DAC_CS_rec<='0';
-						flag_clk<='1';
-						DAC_SDI_rec<=current_vector(channel_count)(23-count); 
-						count<=count+1;
-					else
-						current_vector(channel_count)<=std_logic_vector(unsigned(current_vector(channel_count))-1);--al enviarlo se establece el siguiente valor
-						DAC_CS_rec<='1';
-						flag_clk<='0';
-						count<=0;
-						channel_count<=channel_count+1;
-						rampa<=0;
-					end if;
+					
+					when esperar =>
+						if channel_count<8 then
+							channel_count<=channel_count+1;
+						else
+							send<=1;
+						end if;
+					end case;
 				else
-					channel_count<=channel_count+1;
-					flag_ramp_end(channel_count)<='1';
+					send<=1;
 				end if;
 				
-			when 2=>--acciona el trigger del DAC
+			when 1=>--acciona el trigger del DAC
 				if count<24 then
 					DAC_CS_rec<='0';
 					flag_clk<='1';
@@ -209,10 +235,10 @@ begin
 				else
 					DAC_CS_rec<='0';
 					count<=0;
-					rampa<=3;
+					send<=2;
 				end if;
 			
-			when 3=>
+			when 2=>
 				if count<24 then
 					DAC_CS_rec<='0';
 					flag_clk<='1';
@@ -221,7 +247,8 @@ begin
 				else
 					DAC_CS_rec<='0';
 					count<=0;
-					rampa<=0;
+					send<=0;
+					channel_count<=0;
 				end if;
 			end case;
 		end if;
