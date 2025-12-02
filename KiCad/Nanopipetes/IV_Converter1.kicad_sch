@@ -268,24 +268,26 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "SamacSys_Parts:OPA827AIDR"
+		(symbol "OPA380AID:OPA380AID"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "IC9"
-				(at 22.86 3.81 0)
+			(property "Reference" "IC"
+				(at 24.13 7.62 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left top)
 				)
 			)
-			(property "Value" "OPA827AIDR"
-				(at 22.86 1.27 0)
+			(property "Value" "OPA380AID"
+				(at 24.13 5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left top)
 				)
 			)
 			(property "Footprint" "SOIC127P600X175-8N"
@@ -298,7 +300,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "http://www.ti.com/lit/gpn/OPA827"
+			(property "Datasheet" "http://www.ti.com/lit/gpn/opa380"
 				(at 24.13 -194.92 0)
 				(effects
 					(font
@@ -308,8 +310,8 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Low-Noise, High-Precision, JFET-Input Operational Amplifier"
-				(at 7.62 -16.51 0)
+			(property "Description" "Texas Instruments OPA380AID, Transimpedance Amplifier 3 V, 5 V 90MHz 8-Pin SOIC"
+				(at 1.016 -18.542 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -327,7 +329,7 @@
 					(hide yes)
 				)
 			)
-			(property "Manufacturer_Name" "Texas Instruments"
+			(property "Mouser Part Number" "595-OPA380AID"
 				(at 24.13 -494.92 0)
 				(effects
 					(font
@@ -337,7 +339,7 @@
 					(hide yes)
 				)
 			)
-			(property "Manufacturer_Part_Number" "OPA827AIDR"
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/OPA380AID?qs=7nS3%252BbEUL6tQB7Ghp56BWQ%3D%3D"
 				(at 24.13 -594.92 0)
 				(effects
 					(font
@@ -347,7 +349,7 @@
 					(hide yes)
 				)
 			)
-			(property "Mouser Part Number" "595-OPA827AIDR"
+			(property "Manufacturer_Name" "Texas Instruments"
 				(at 24.13 -694.92 0)
 				(effects
 					(font
@@ -357,7 +359,7 @@
 					(hide yes)
 				)
 			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/OPA827AIDR?qs=ToK3%2FczOkx%252BfLFxatAoUKw%3D%3D"
+			(property "Manufacturer_Part_Number" "OPA380AID"
 				(at 24.13 -794.92 0)
 				(effects
 					(font
@@ -367,44 +369,23 @@
 					(hide yes)
 				)
 			)
-			(property "Arrow Part Number" "OPA827AIDR"
-				(at 24.13 -894.92 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/opa827aidr/texas-instruments?region=nac"
-				(at 24.13 -994.92 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(symbol "OPA827AIDR_1_1"
+			(symbol "OPA380AID_1_1"
 				(polyline
 					(pts
-						(xy 5.08 2.54) (xy 5.08 -10.16) (xy 19.05 -3.81) (xy 5.08 2.54)
+						(xy 10.16 5.08) (xy 10.16 -10.16) (xy 22.86 -2.54) (xy 10.16 5.08)
 					)
 					(stroke
-						(width 0.254)
+						(width 0)
 						(type solid)
 					)
 					(fill
-						(type color)
-						(color 255 255 194 1)
+						(type background)
 					)
 				)
 				(pin passive line
-					(at 2.54 -1.27 0)
-					(length 2.54)
-					(name "-"
+					(at 5.08 1.27 0)
+					(length 5.08)
+					(name "-IN"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -420,9 +401,9 @@
 					)
 				)
 				(pin passive line
-					(at 2.54 -6.35 0)
-					(length 2.54)
-					(name "+"
+					(at 5.08 -6.35 0)
+					(length 5.08)
+					(name "+IN"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -438,8 +419,8 @@
 					)
 				)
 				(pin passive line
-					(at 10.16 3.81 270)
-					(length 3.81)
+					(at 16.51 6.35 270)
+					(length 5.08)
 					(name "V+"
 						(effects
 							(font
@@ -455,66 +436,9 @@
 						)
 					)
 				)
-				(pin no_connect line
-					(at 10.16 -1.27 270)
-					(length 5.08)
-					(hide yes)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at 10.16 -1.27 270)
-					(length 5.08)
-					(hide yes)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at 10.16 -1.27 270)
-					(length 5.08)
-					(hide yes)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin passive line
-					(at 10.16 -11.43 90)
-					(length 3.81)
+					(at 16.51 -11.43 90)
+					(length 5.08)
 					(name "V-"
 						(effects
 							(font
@@ -531,9 +455,9 @@
 					)
 				)
 				(pin passive line
-					(at 21.59 -3.81 180)
-					(length 2.54)
-					(name ""
+					(at 26.67 -2.54 180)
+					(length 5.08)
+					(name "OUT"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1029,16 +953,22 @@
 		(uuid "c93382d1-d485-4c81-8993-647feb607ec6")
 	)
 	(junction
-		(at 71.12 138.43)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1069249b-5c7e-4156-92f1-86428341a704")
-	)
-	(junction
 		(at 218.44 29.21)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1298a97e-ae09-4124-9dae-b87e6f9dc38d")
+	)
+	(junction
+		(at 111.76 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "16ad593e-26a0-45f3-9ca0-1573d2dea94d")
+	)
+	(junction
+		(at 71.12 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1f9f5f15-4f48-48d7-bd76-72bf2a9a8080")
 	)
 	(junction
 		(at 111.76 119.38)
@@ -1059,12 +989,6 @@
 		(uuid "2a7d38cc-4657-4140-84e3-956128fd4cd6")
 	)
 	(junction
-		(at 71.12 58.42)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "33d09bc8-4b18-4316-9d12-bf38d91675c1")
-	)
-	(junction
 		(at 215.9 152.4)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1083,34 +1007,22 @@
 		(uuid "42f9aeab-9288-4bbc-b47f-985aafd404d1")
 	)
 	(junction
-		(at 111.76 135.89)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "43d2e65a-613b-46dd-a4dc-ed7c4603bf01")
-	)
-	(junction
-		(at 38.1 135.89)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4e130d8b-0a5b-4345-9b3f-090a65f91668")
-	)
-	(junction
 		(at 218.44 41.91)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6355cef3-8190-40f7-a2ce-66cf5b89840c")
 	)
 	(junction
-		(at 111.76 55.88)
+		(at 111.76 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "63ebcc61-6172-4beb-99ff-a0f5503ce5a4")
+		(uuid "6e0d2208-376a-4cdc-ba46-04975a6825bb")
 	)
 	(junction
-		(at 144.78 58.42)
+		(at 71.12 137.16)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "72baf4a5-8cbb-4906-a76b-4643c9b12931")
+		(uuid "8ecb225f-7dea-45a9-b504-991a87c7da32")
 	)
 	(junction
 		(at 215.9 139.7)
@@ -1125,16 +1037,22 @@
 		(uuid "a1b3168d-ed83-4574-8d49-2c8ba64ac6ed")
 	)
 	(junction
+		(at 144.78 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a45080c1-8f8f-477d-9b04-4a36c1c5090f")
+	)
+	(junction
+		(at 38.1 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "aaf74e3a-6476-4469-b932-f38cccbb5b07")
+	)
+	(junction
 		(at 215.9 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b42c9800-b0c7-4b70-ad14-a0f086e29c21")
-	)
-	(junction
-		(at 144.78 138.43)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c127b5bc-361c-473a-8bcb-3e6aa973d36d")
 	)
 	(junction
 		(at 71.12 39.37)
@@ -1149,22 +1067,28 @@
 		(uuid "cf9241de-c32e-4a2e-981f-e8637d6a426a")
 	)
 	(junction
-		(at 38.1 55.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d04e2ef2-d7f9-41b7-a96d-e4d2f3a0b3ef")
-	)
-	(junction
 		(at 38.1 39.37)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "df9a5ea6-7dd8-4a42-a78a-1991186b8830")
 	)
 	(junction
+		(at 144.78 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ebd95a0a-9e44-4676-86e4-f582384c3085")
+	)
+	(junction
 		(at 144.78 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f7fce2cd-6895-40b0-80eb-b748b4789143")
+	)
+	(junction
+		(at 38.1 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f8c340e4-89cb-4d4e-be90-80512967b3c5")
 	)
 	(junction
 		(at 111.76 39.37)
@@ -1211,26 +1135,6 @@
 			(type default)
 		)
 		(uuid "10afccae-d213-49d9-a2b0-6620a0ff85ba")
-	)
-	(wire
-		(pts
-			(xy 111.76 39.37) (xy 111.76 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1639058d-f591-4244-ac16-a8cb2f8a2959")
-	)
-	(wire
-		(pts
-			(xy 71.12 119.38) (xy 71.12 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "181f248b-498b-4d46-ad58-8fb3d7511e98")
 	)
 	(wire
 		(pts
@@ -1294,16 +1198,6 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 39.37) (xy 71.12 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "23133fdd-e98f-4c39-9945-34bb3b02fa0e")
-	)
-	(wire
-		(pts
 			(xy 218.44 72.39) (xy 218.44 74.93)
 		)
 		(stroke
@@ -1364,13 +1258,23 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 60.96) (xy 44.45 60.96)
+			(xy 43.18 60.96) (xy 40.64 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "31e69e94-f884-45f7-b2cd-fd6b08d3ef78")
+	)
+	(wire
+		(pts
+			(xy 111.76 53.34) (xy 111.76 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32bb3e64-1b2b-4113-9261-ded2b7e13351")
 	)
 	(wire
 		(pts
@@ -1384,7 +1288,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 140.97) (xy 118.11 140.97)
+			(xy 116.84 140.97) (xy 114.3 140.97)
 		)
 		(stroke
 			(width 0)
@@ -1414,6 +1318,16 @@
 	)
 	(wire
 		(pts
+			(xy 38.1 39.37) (xy 38.1 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3fc87a11-f380-4533-8c23-b76be988758a")
+	)
+	(wire
+		(pts
 			(xy 52.07 66.04) (xy 52.07 67.31)
 		)
 		(stroke
@@ -1421,6 +1335,26 @@
 			(type default)
 		)
 		(uuid "42e5e429-c051-44e5-9e5f-2ebe5991c88d")
+	)
+	(wire
+		(pts
+			(xy 144.78 137.16) (xy 144.78 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "435dff2c-9fc2-4caf-8107-b3fd68395690")
+	)
+	(wire
+		(pts
+			(xy 71.12 57.15) (xy 71.12 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43a1cf8a-d764-440b-8cd6-fdd1b57f5fda")
 	)
 	(wire
 		(pts
@@ -1464,13 +1398,23 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 58.42) (xy 71.12 58.42)
+			(xy 62.23 57.15) (xy 71.12 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "4e1c9525-0ce2-42e1-8090-266526e0106f")
+	)
+	(wire
+		(pts
+			(xy 38.1 53.34) (xy 38.1 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e44506c-1340-4d3e-8832-b6f5255b5678")
 	)
 	(wire
 		(pts
@@ -1494,13 +1438,13 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 39.37) (xy 38.1 55.88)
+			(xy 144.78 119.38) (xy 144.78 137.16)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "525d0541-eb2c-4325-afd6-e763755ffdc9")
+		(uuid "532e6916-6f23-4f6b-aef0-0f7a1c7a4e6c")
 	)
 	(wire
 		(pts
@@ -1534,7 +1478,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 55.88) (xy 44.45 55.88)
+			(xy 38.1 53.34) (xy 40.64 53.34)
 		)
 		(stroke
 			(width 0)
@@ -1584,6 +1528,16 @@
 	)
 	(wire
 		(pts
+			(xy 111.76 39.37) (xy 111.76 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63c1fa4f-6a6e-4bde-ba74-4d7dbfb99e12")
+	)
+	(wire
+		(pts
 			(xy 223.52 106.68) (xy 223.52 109.22)
 		)
 		(stroke
@@ -1594,7 +1548,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 58.42) (xy 144.78 58.42)
+			(xy 135.89 57.15) (xy 144.78 57.15)
 		)
 		(stroke
 			(width 0)
@@ -1621,6 +1575,16 @@
 			(type default)
 		)
 		(uuid "698b9282-5649-46a8-81fd-ffc5281f4e02")
+	)
+	(wire
+		(pts
+			(xy 144.78 39.37) (xy 144.78 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b21c9e0-f300-462d-b2d1-f8386462d99a")
 	)
 	(wire
 		(pts
@@ -1664,6 +1628,16 @@
 	)
 	(wire
 		(pts
+			(xy 38.1 119.38) (xy 38.1 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76c9fe06-74ab-4560-bc70-b0b9a0f7c547")
+	)
+	(wire
+		(pts
 			(xy 31.75 55.88) (xy 38.1 55.88)
 		)
 		(stroke
@@ -1674,7 +1648,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 119.38) (xy 111.76 135.89)
+			(xy 111.76 119.38) (xy 111.76 133.35)
 		)
 		(stroke
 			(width 0)
@@ -1684,23 +1658,13 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 59.69) (xy 43.18 60.96)
+			(xy 43.18 60.96) (xy 43.18 59.69)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "8366c929-c973-4e7b-8483-efafe1ecb63d")
-	)
-	(wire
-		(pts
-			(xy 38.1 119.38) (xy 38.1 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "866a3905-9fd9-40a4-9067-569f98731316")
 	)
 	(wire
 		(pts
@@ -1724,7 +1688,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 138.43) (xy 144.78 138.43)
+			(xy 135.89 137.16) (xy 144.78 137.16)
 		)
 		(stroke
 			(width 0)
@@ -1744,7 +1708,17 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 49.53) (xy 52.07 50.8)
+			(xy 71.12 39.37) (xy 71.12 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97e380f4-5c29-4a6f-96f0-b233e97488a3")
+	)
+	(wire
+		(pts
+			(xy 52.07 49.53) (xy 52.07 48.26)
 		)
 		(stroke
 			(width 0)
@@ -1764,7 +1738,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 55.88) (xy 118.11 55.88)
+			(xy 111.76 53.34) (xy 114.3 53.34)
 		)
 		(stroke
 			(width 0)
@@ -1774,7 +1748,17 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 135.89) (xy 44.45 135.89)
+			(xy 38.1 133.35) (xy 38.1 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa02526c-1b18-4480-aead-a38d8b80a1e1")
+	)
+	(wire
+		(pts
+			(xy 38.1 133.35) (xy 40.64 133.35)
 		)
 		(stroke
 			(width 0)
@@ -1854,17 +1838,17 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 119.38) (xy 144.78 138.43)
+			(xy 144.78 57.15) (xy 144.78 58.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c9184d78-ce17-4896-972f-1f329f7fecb5")
+		(uuid "bff0a1a4-cf9f-43eb-a17c-6eeb207a7564")
 	)
 	(wire
 		(pts
-			(xy 111.76 135.89) (xy 118.11 135.89)
+			(xy 111.76 133.35) (xy 114.3 133.35)
 		)
 		(stroke
 			(width 0)
@@ -1884,13 +1868,33 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 49.53) (xy 125.73 50.8)
+			(xy 125.73 49.53) (xy 125.73 48.26)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "cfe0a2bc-9d8a-4ffb-b312-c599b5a75015")
+	)
+	(wire
+		(pts
+			(xy 71.12 119.38) (xy 71.12 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6aeafce-16ca-4451-b763-350a3305bf12")
+	)
+	(wire
+		(pts
+			(xy 71.12 137.16) (xy 71.12 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6eeb629-74fc-4b0b-b4ef-5932fcc7c082")
 	)
 	(wire
 		(pts
@@ -1904,6 +1908,16 @@
 	)
 	(wire
 		(pts
+			(xy 111.76 133.35) (xy 111.76 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db0dcee0-be1d-4bc2-bef0-5eef2681c1a9")
+	)
+	(wire
+		(pts
 			(xy 38.1 109.22) (xy 38.1 119.38)
 		)
 		(stroke
@@ -1914,7 +1928,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 60.96) (xy 118.11 60.96)
+			(xy 116.84 60.96) (xy 114.3 60.96)
 		)
 		(stroke
 			(width 0)
@@ -1934,16 +1948,6 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 39.37) (xy 144.78 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e034d139-c89b-4635-9c4b-ce1785bd97dd")
-	)
-	(wire
-		(pts
 			(xy 50.8 39.37) (xy 38.1 39.37)
 		)
 		(stroke
@@ -1954,7 +1958,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 139.7) (xy 43.18 140.97)
+			(xy 43.18 140.97) (xy 43.18 139.7)
 		)
 		(stroke
 			(width 0)
@@ -1974,7 +1978,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 129.54) (xy 125.73 130.81)
+			(xy 125.73 129.54) (xy 125.73 128.27)
 		)
 		(stroke
 			(width 0)
@@ -2014,7 +2018,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 138.43) (xy 71.12 138.43)
+			(xy 62.23 137.16) (xy 71.12 137.16)
 		)
 		(stroke
 			(width 0)
@@ -2024,7 +2028,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 129.54) (xy 52.07 130.81)
+			(xy 52.07 129.54) (xy 52.07 128.27)
 		)
 		(stroke
 			(width 0)
@@ -2064,7 +2068,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 140.97) (xy 44.45 140.97)
+			(xy 43.18 140.97) (xy 40.64 140.97)
 		)
 		(stroke
 			(width 0)
@@ -2436,7 +2440,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "0c565ec5-94d5-4f70-94db-a150a3a5de05")
 		(property "Reference" "C29"
 			(at 129.54 105.41 90)
@@ -2579,7 +2583,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "2d985eb6-2c75-4799-92e3-250c2d4dba26")
 		(property "Reference" "C28"
 			(at 129.54 25.4 90)
@@ -2783,163 +2787,6 @@
 		)
 	)
 	(symbol
-		(lib_id "SamacSys_Parts:OPA827AIDR")
-		(at 41.91 54.61 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3470efd1-7cf2-4a4c-966c-4b51edd0090e")
-		(property "Reference" "IC4"
-			(at 62.23 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "OPA827AIDR"
-			(at 62.23 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "SamacSys_Parts:SOIC127P600X175-8N"
-			(at 66.04 149.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/gpn/OPA827"
-			(at 66.04 249.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "Low-Noise, High-Precision, JFET-Input Operational Amplifier"
-			(at 49.53 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" "1.75"
-			(at 66.04 449.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Texas Instruments"
-			(at 66.04 549.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "OPA827AIDR"
-			(at 66.04 649.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "595-OPA827AIDR"
-			(at 66.04 749.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/OPA827AIDR?qs=ToK3%2FczOkx%252BfLFxatAoUKw%3D%3D"
-			(at 66.04 849.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" "OPA827AIDR"
-			(at 66.04 949.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/opa827aidr/texas-instruments?region=nac"
-			(at 66.04 1049.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(pin "7"
-			(uuid "e3629268-b268-4db4-a443-b5dcd72e6ca1")
-		)
-		(pin "3"
-			(uuid "11db8783-f57f-4ee6-9103-4ef367ab1027")
-		)
-		(pin "4"
-			(uuid "0231dcf6-fc25-4583-95d8-2d97b6760bc3")
-		)
-		(pin "8"
-			(uuid "fe52551c-ef2f-45e2-9d84-04f232691c75")
-		)
-		(pin "2"
-			(uuid "af79a052-9ade-45b8-8edc-2cf0df9a25f7")
-		)
-		(pin "6"
-			(uuid "97645439-1d33-4808-bb85-96be6c760b4f")
-		)
-		(pin "1"
-			(uuid "1e09fc27-4590-46e4-9086-18d53e2c2ed4")
-		)
-		(pin "5"
-			(uuid "0828b89a-4398-4f9d-b3ac-1dd83dbde697")
-		)
-		(instances
-			(project "Nanopipets"
-				(path "/f9212dfc-041d-4735-9909-f0710f989c56/6200e73e-29f9-4c03-b4c6-02c5c59af200"
-					(reference "IC4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 218.44 35.56 0)
 		(unit 1)
@@ -3012,6 +2859,135 @@
 			(project "Nanopipets"
 				(path "/f9212dfc-041d-4735-9909-f0710f989c56/6200e73e-29f9-4c03-b4c6-02c5c59af200"
 					(reference "C32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OPA380AID:OPA380AID")
+		(at 109.22 134.62 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "40833b73-25da-468f-a074-ed0c62c7bfb5")
+		(property "Reference" "IC7"
+			(at 138.43 130.7398 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "OPA380AID"
+			(at 138.43 133.2798 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Custom:SOIC127P600X175-8N"
+			(at 133.35 229.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/gpn/opa380"
+			(at 133.35 329.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Texas Instruments OPA380AID, Transimpedance Amplifier 3 V, 5 V 90MHz 8-Pin SOIC"
+			(at 110.236 153.162 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.75"
+			(at 133.35 529.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "595-OPA380AID"
+			(at 133.35 629.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/OPA380AID?qs=7nS3%252BbEUL6tQB7Ghp56BWQ%3D%3D"
+			(at 133.35 729.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Texas Instruments"
+			(at 133.35 829.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "OPA380AID"
+			(at 133.35 929.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "4c93ac67-7b3f-48ef-a370-df8bcdc3aeca")
+		)
+		(pin "2"
+			(uuid "413a41f6-b725-4e35-b28c-f0e27f8d175b")
+		)
+		(pin "3"
+			(uuid "8031c281-e005-4ae9-8dbf-24b2a2c7a90f")
+		)
+		(pin "4"
+			(uuid "789c823f-1f9c-4883-b2d0-baae6aeb1b99")
+		)
+		(pin "7"
+			(uuid "d7a83bb3-21c7-4d1d-8f2e-10ffbeaed546")
+		)
+		(instances
+			(project ""
+				(path "/f9212dfc-041d-4735-9909-f0710f989c56/6200e73e-29f9-4c03-b4c6-02c5c59af200"
+					(reference "IC7")
 					(unit 1)
 				)
 			)
@@ -3506,6 +3482,135 @@
 			(project "Nanopipets"
 				(path "/f9212dfc-041d-4735-9909-f0710f989c56/6200e73e-29f9-4c03-b4c6-02c5c59af200"
 					(reference "#PWR053")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OPA380AID:OPA380AID")
+		(at 109.22 54.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7046874d-b15c-4d8b-84a5-3919170b62c0")
+		(property "Reference" "IC6"
+			(at 138.43 50.7298 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "OPA380AID"
+			(at 138.43 53.2698 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Custom:SOIC127P600X175-8N"
+			(at 133.35 149.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/gpn/opa380"
+			(at 133.35 249.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Texas Instruments OPA380AID, Transimpedance Amplifier 3 V, 5 V 90MHz 8-Pin SOIC"
+			(at 110.236 73.152 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.75"
+			(at 133.35 449.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "595-OPA380AID"
+			(at 133.35 549.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/OPA380AID?qs=7nS3%252BbEUL6tQB7Ghp56BWQ%3D%3D"
+			(at 133.35 649.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Texas Instruments"
+			(at 133.35 749.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "OPA380AID"
+			(at 133.35 849.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "1d64223d-344d-4079-a120-404483f757d6")
+		)
+		(pin "7"
+			(uuid "42077e08-b35d-4f0b-b500-485ac35fd2db")
+		)
+		(pin "4"
+			(uuid "83957504-9b57-44df-9505-1a4ec5cfe218")
+		)
+		(pin "6"
+			(uuid "fe3135a0-d386-4203-a172-0a1c9df33c59")
+		)
+		(pin "3"
+			(uuid "6695724f-8d45-47e6-969d-b4ab85d51c3e")
+		)
+		(instances
+			(project ""
+				(path "/f9212dfc-041d-4735-9909-f0710f989c56/6200e73e-29f9-4c03-b4c6-02c5c59af200"
+					(reference "IC6")
 					(unit 1)
 				)
 			)
@@ -4286,7 +4391,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "afb10b72-d28e-4c0f-beed-9322c42cec83")
 		(property "Reference" "C27"
 			(at 55.88 105.41 90)
@@ -4502,163 +4607,6 @@
 		)
 	)
 	(symbol
-		(lib_id "SamacSys_Parts:OPA827AIDR")
-		(at 115.57 54.61 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b852783c-8fb5-4c0e-836b-77470db57789")
-		(property "Reference" "IC6"
-			(at 135.89 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "OPA827AIDR"
-			(at 135.89 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "SamacSys_Parts:SOIC127P600X175-8N"
-			(at 139.7 149.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/gpn/OPA827"
-			(at 139.7 249.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "Low-Noise, High-Precision, JFET-Input Operational Amplifier"
-			(at 123.19 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" "1.75"
-			(at 139.7 449.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Texas Instruments"
-			(at 139.7 549.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "OPA827AIDR"
-			(at 139.7 649.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "595-OPA827AIDR"
-			(at 139.7 749.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/OPA827AIDR?qs=ToK3%2FczOkx%252BfLFxatAoUKw%3D%3D"
-			(at 139.7 849.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" "OPA827AIDR"
-			(at 139.7 949.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/opa827aidr/texas-instruments?region=nac"
-			(at 139.7 1049.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(pin "7"
-			(uuid "f8be7682-3cbf-4901-b6ea-4d1a81363cac")
-		)
-		(pin "3"
-			(uuid "c480036b-4dee-4999-919f-43b1f65ba114")
-		)
-		(pin "4"
-			(uuid "4abab313-ffef-4945-8f9d-a63cc4f0b2f3")
-		)
-		(pin "8"
-			(uuid "7dd56ad5-e9df-4793-84c7-575749dea335")
-		)
-		(pin "2"
-			(uuid "cfc4a487-30c2-4be2-a385-6c99b73a9864")
-		)
-		(pin "6"
-			(uuid "34956275-e9ca-49e5-8161-317d0377d8f6")
-		)
-		(pin "1"
-			(uuid "b7d50bc7-2ceb-4229-9f10-a2c484c30915")
-		)
-		(pin "5"
-			(uuid "efd24bbc-36f8-4f15-8743-a07edeeb10da")
-		)
-		(instances
-			(project "Nanopipets"
-				(path "/f9212dfc-041d-4735-9909-f0710f989c56/6200e73e-29f9-4c03-b4c6-02c5c59af200"
-					(reference "IC6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3.3V")
 		(at 43.18 139.7 0)
 		(unit 1)
@@ -4790,6 +4738,135 @@
 		)
 	)
 	(symbol
+		(lib_id "OPA380AID:OPA380AID")
+		(at 35.56 134.62 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c60edfa2-5e25-4922-ba2e-0051cc4902a2")
+		(property "Reference" "IC5"
+			(at 64.77 130.7398 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "OPA380AID"
+			(at 64.77 133.2798 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Custom:SOIC127P600X175-8N"
+			(at 59.69 229.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/gpn/opa380"
+			(at 59.69 329.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Texas Instruments OPA380AID, Transimpedance Amplifier 3 V, 5 V 90MHz 8-Pin SOIC"
+			(at 36.576 153.162 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.75"
+			(at 59.69 529.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "595-OPA380AID"
+			(at 59.69 629.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/OPA380AID?qs=7nS3%252BbEUL6tQB7Ghp56BWQ%3D%3D"
+			(at 59.69 729.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Texas Instruments"
+			(at 59.69 829.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "OPA380AID"
+			(at 59.69 929.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "0b50316a-8b58-43ad-ab6c-29dd8d20f33a")
+		)
+		(pin "7"
+			(uuid "d88acbaa-3993-4629-8e3f-d3c3ac3ac5e9")
+		)
+		(pin "4"
+			(uuid "3c582d78-a3c9-4604-9a39-8f428aa5ffec")
+		)
+		(pin "2"
+			(uuid "c77147ca-d98c-4a37-b762-b02dfd39291c")
+		)
+		(pin "3"
+			(uuid "134b9b16-d372-46b6-85e7-8744eb588c94")
+		)
+		(instances
+			(project ""
+				(path "/f9212dfc-041d-4735-9909-f0710f989c56/6200e73e-29f9-4c03-b4c6-02c5c59af200"
+					(reference "IC5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 223.52 146.05 0)
 		(unit 1)
@@ -4862,163 +4939,6 @@
 			(project "Nanopipets"
 				(path "/f9212dfc-041d-4735-9909-f0710f989c56/6200e73e-29f9-4c03-b4c6-02c5c59af200"
 					(reference "C35")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "SamacSys_Parts:OPA827AIDR")
-		(at 41.91 134.62 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d7965b33-bdb6-408e-8c50-e86643041e0d")
-		(property "Reference" "IC5"
-			(at 62.23 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "OPA827AIDR"
-			(at 62.23 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "SamacSys_Parts:SOIC127P600X175-8N"
-			(at 66.04 229.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/gpn/OPA827"
-			(at 66.04 329.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "Low-Noise, High-Precision, JFET-Input Operational Amplifier"
-			(at 49.53 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" "1.75"
-			(at 66.04 529.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Texas Instruments"
-			(at 66.04 629.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "OPA827AIDR"
-			(at 66.04 729.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "595-OPA827AIDR"
-			(at 66.04 829.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/OPA827AIDR?qs=ToK3%2FczOkx%252BfLFxatAoUKw%3D%3D"
-			(at 66.04 929.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" "OPA827AIDR"
-			(at 66.04 1029.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/opa827aidr/texas-instruments?region=nac"
-			(at 66.04 1129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(pin "7"
-			(uuid "c81d9590-5d31-4e98-bd61-83cc50dd6de0")
-		)
-		(pin "3"
-			(uuid "8958d37a-8f3c-46e0-bc28-ac8fec2183bf")
-		)
-		(pin "4"
-			(uuid "75bee7cf-2bf7-4f9d-864d-82b3f04aa651")
-		)
-		(pin "8"
-			(uuid "073d0c28-cc85-4ab9-94e3-1939f8618003")
-		)
-		(pin "2"
-			(uuid "dea79fe2-bf83-4750-9fb8-a5e6b88329c2")
-		)
-		(pin "6"
-			(uuid "f0bf735b-e447-410f-86ef-f4b72913199f")
-		)
-		(pin "1"
-			(uuid "a6d8f07b-0e9a-4220-8ed3-00e1e2e7b05a")
-		)
-		(pin "5"
-			(uuid "012a3d59-6207-4701-924f-f70ba385de32")
-		)
-		(instances
-			(project "Nanopipets"
-				(path "/f9212dfc-041d-4735-9909-f0710f989c56/6200e73e-29f9-4c03-b4c6-02c5c59af200"
-					(reference "IC5")
 					(unit 1)
 				)
 			)
@@ -5101,163 +5021,6 @@
 		)
 	)
 	(symbol
-		(lib_id "SamacSys_Parts:OPA827AIDR")
-		(at 115.57 134.62 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "de4e09ab-67e6-4463-a4d6-70aed121c4a9")
-		(property "Reference" "IC7"
-			(at 135.89 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "OPA827AIDR"
-			(at 135.89 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "SamacSys_Parts:SOIC127P600X175-8N"
-			(at 139.7 229.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/gpn/OPA827"
-			(at 139.7 329.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "Low-Noise, High-Precision, JFET-Input Operational Amplifier"
-			(at 123.19 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" "1.75"
-			(at 139.7 529.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Texas Instruments"
-			(at 139.7 629.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "OPA827AIDR"
-			(at 139.7 729.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "595-OPA827AIDR"
-			(at 139.7 829.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/OPA827AIDR?qs=ToK3%2FczOkx%252BfLFxatAoUKw%3D%3D"
-			(at 139.7 929.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" "OPA827AIDR"
-			(at 139.7 1029.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/opa827aidr/texas-instruments?region=nac"
-			(at 139.7 1129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(pin "7"
-			(uuid "49213d0e-bdb2-498f-92c4-16166bf419ce")
-		)
-		(pin "3"
-			(uuid "0c2c6bb6-6199-4bc3-9a44-ab2378cb9b13")
-		)
-		(pin "4"
-			(uuid "639b7d79-44fc-4207-9cb9-5b25e3392778")
-		)
-		(pin "8"
-			(uuid "f3272a18-859b-49fe-a00c-75e369fe1802")
-		)
-		(pin "2"
-			(uuid "bb9b06ba-ad21-4884-91b3-c00ded3c3114")
-		)
-		(pin "6"
-			(uuid "812f7f5f-d676-4ffc-af28-1be8b6140d69")
-		)
-		(pin "1"
-			(uuid "c4bf2c1e-95dd-478f-becb-ed59abdec7a8")
-		)
-		(pin "5"
-			(uuid "066b9026-a3ca-4259-a6c2-c3bea8a3bdb5")
-		)
-		(instances
-			(project "Nanopipets"
-				(path "/f9212dfc-041d-4735-9909-f0710f989c56/6200e73e-29f9-4c03-b4c6-02c5c59af200"
-					(reference "IC7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 215.9 146.05 0)
 		(unit 1)
@@ -5330,6 +5093,135 @@
 			(project "Nanopipets"
 				(path "/f9212dfc-041d-4735-9909-f0710f989c56/6200e73e-29f9-4c03-b4c6-02c5c59af200"
 					(reference "C31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OPA380AID:OPA380AID")
+		(at 35.56 54.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e05bc5b0-ebd7-4c40-b92a-9fbf0048992d")
+		(property "Reference" "IC4"
+			(at 64.77 50.7298 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "OPA380AID"
+			(at 64.77 53.2698 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Custom:SOIC127P600X175-8N"
+			(at 59.69 149.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/gpn/opa380"
+			(at 59.69 249.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Texas Instruments OPA380AID, Transimpedance Amplifier 3 V, 5 V 90MHz 8-Pin SOIC"
+			(at 36.576 73.152 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.75"
+			(at 59.69 449.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "595-OPA380AID"
+			(at 59.69 549.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/OPA380AID?qs=7nS3%252BbEUL6tQB7Ghp56BWQ%3D%3D"
+			(at 59.69 649.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Texas Instruments"
+			(at 59.69 749.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "OPA380AID"
+			(at 59.69 849.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ac67ccf9-8418-48a6-b97e-890b6459163b")
+		)
+		(pin "6"
+			(uuid "4c0ab3a2-bc77-401f-9301-e3d57a8daa44")
+		)
+		(pin "3"
+			(uuid "715f328b-c37a-4e7f-b76e-733a21f2d349")
+		)
+		(pin "4"
+			(uuid "79b081c8-c433-4167-8ec4-cf62214af0d8")
+		)
+		(pin "7"
+			(uuid "850e09c6-8031-4923-8105-f06cdd0394ae")
+		)
+		(instances
+			(project ""
+				(path "/f9212dfc-041d-4735-9909-f0710f989c56/6200e73e-29f9-4c03-b4c6-02c5c59af200"
+					(reference "IC4")
 					(unit 1)
 				)
 			)

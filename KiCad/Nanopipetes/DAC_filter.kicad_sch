@@ -6227,7 +6227,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3.3VDA"
+		(property "Value" "+3.3VD_ADC"
 			(at 207.01 45.466 0)
 			(effects
 				(font
@@ -6736,7 +6736,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+3.3VD_ADC"
 			(at 212.09 115.316 0)
 			(effects
 				(font
