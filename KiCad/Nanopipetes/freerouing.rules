@@ -1,0 +1,132 @@
+
+(rules PCB freerouting.dsn
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute off)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 1)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.8)
+      (against_preferred_direction_trace_costs 4.4)
+    )
+    (layer_rule In1.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 3.4)
+    )
+    (layer_rule In2.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 3.6)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.8)
+      (against_preferred_direction_trace_costs 4.2)
+    )
+  )
+  (rule
+    (width 150.0)
+    (clearance 140.0)
+    (clearance 75.0 (type smd_to_turn_gap))
+    (clearance 35.0 (type smd))
+    (clearance 140.0 (type "kicad_default"))
+  )
+  (padstack "Via[0-3]_600:300_um"
+    (shape
+      (circle F.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle In1.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle In2.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-3]_600:300_um" "Via[0-3]_600:300_um" default
+  )
+  (via 
+    "Via[0-3]_600:300_um-kicad_default" "Via[0-3]_600:300_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-3]_600:300_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-3]_600:300_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 150.0)
+    )
+    (circuit 
+      (use_layer F.Cu In1.Cu In2.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    +3.3VD +5V GND +3.3VCCA "+3.3V_USB" +1.8VD /Ethernet/Ethernet.RX2 "+3.3VA_ADC"
+    "+2.5V_ETH" "+3.3VD_ADC" "Net-(T1-CD3)" /ADC1/ADC1.SDOC /ADC1/ADC1.SDOA /ADC1/ADC1.CS /ADC2/ADC2.CS /ADC2/ADC2.SDOA
+    /ADC2/ADC2.SDOC /Connectors/OUT2 /DAC/DAC.SDI "Net-(Q2-B)" /ADC1/IN3 /ADC1/IN2 /ADC1/IN4 /ADC2/IN5
+    /ADC2/IN7 /ADC2/IN6 /ADC2/IN8 /Connectors/OUT3 /Connectors/OUT5 "Net-(IC16-X_I)" /Connectors/JTAG.TMS /Connectors/UART.RX
+    "Net-(R66-Pad2)" "Net-(PS1-SS)" "2.5V_REF" "+1.1V_ETH" "Net-(T1-CD1)" "Net-(T1-CD2)" "Net-(T1-CD4)" /ADC1/ADC1.SDOD
+    /ADC1/ADC.SDI /ADC1/ADC1.SDOB /ADC2/ADC2.SDI /ADC2/ADC2.SDOB /ADC2/ADC2.SDOD /Connectors/OUT1 /DAC/DAC.SCLK /DAC/DAC.SDO
+    /Connectors/JTAG.TCK "/Ethernet/Ethernet.TX_CTRL" /Connectors/NSTATUS /Ethernet/Ethernet.MDC /Ethernet/Ethernet.RX3 /Ethernet/Ethernet.RX1 "/Ethernet/Ethernet.GTX_CLK" /Ethernet/Ethernet.MDIO
+    "/Connectors/CONF_DONE" "/Connectors/CONFIG_SEL" "/Ethernet/Ethernet.RX_CTRL" "/Ethernet/Ethernet.RX_CLK" /Ethernet/Ethernet.RX0 /Ethernet/Ethernet.TX2 /DAC/OUT7 /DAC/OUT1
+    /DAC/OUT8 /Ethernet/Ethernet.TX3 /DAC/OUT6 /DAC/OUT5 /DAC/OUT4 /DAC/OUT3 /DAC/OUT2 /Ethernet/Ethernet.TX0
+    /Ethernet/Ethernet.TX1 /Connectors/NCONFIG /Connectors/LED2 /Connectors/LED0 "/Connectors/TD_M_C" "/Connectors/TD_P_B" "/Connectors/TD_P_A" "/Connectors/TD_M_B"
+    "/Connectors/TD_M_D" "/Connectors/TD_M_A" /Connectors/LED1 "/Connectors/TD_P_C" "/Connectors/TD_P_D" "Net-(LED1-A)" "Net-(LED1-K)" "unconnected-(PS1-NC_10-Pad42)"
+    "unconnected-(PS1-EAIN-Pad38)" "unconnected-(PS1-COMP-Pad40)" "unconnected-(PS1-NC_1-Pad1)" "unconnected-(PS1-NC_5-Pad16)" "unconnected-(PS1-NC_6-Pad25)" "unconnected-(PS1-NC(SW)_1-Pad4)" "unconnected-(PS1-ROCP-Pad27)" "unconnected-(PS1-NC_2-Pad2)"
+    "unconnected-(PS1-NC_9-Pad31)" "unconnected-(PS1-NC_7-Pad26)" "unconnected-(PS1-NC_11-Pad43)" "unconnected-(PS1-NC(SW)_2-Pad5)" "unconnected-(PS1-NC_4-Pad7)" "unconnected-(PS1-EAOUT-Pad39)" "unconnected-(PS1-NC(SW)_4-Pad15)" "unconnected-(PS1-NC_8-Pad30)"
+    "unconnected-(PS1-NC_3-Pad3)" "unconnected-(PS1-NC(SW)_3-Pad6)" "unconnected-(PS1-NC_12-Pad44)" "Net-(Q1-C)" "Net-(Q2-C)" /Connectors/IN1 /Connectors/IN3 /Connectors/IN2
+    /Connectors/IN4 /Connectors/IN5 /Connectors/IN7 /Connectors/IN6 /Connectors/IN8 "+1.25V_VCOM" /ADC1/IN1 "Net-(IC8-REGCAP)"
+    "Net-(IC8-REFCAP)" "Net-(IC13-REGCAP)" "Net-(IC13-REFCAP)" "Net-(IC18A-+IN_A)" "Net-(C69-Pad1)" "Net-(IC18B-+IN_B)" "Net-(C71-Pad1)" "Net-(C73-Pad1)"
+    "Net-(IC18C-+IN_C)" "Net-(C75-Pad1)" /Connectors/OUT7 "Net-(IC18D-+IN_D)" "Net-(IC19A-+IN_A)" "Net-(IC19C-+IN_C)" "Net-(C78-Pad1)" "Net-(C79-Pad1)"
+    /Connectors/OUT4 /Connectors/OUT6 "Net-(C82-Pad1)" "Net-(C83-Pad1)" /Connectors/OUT8 "Net-(IC16-X_O)" "Net-(U9-~{RESET})" "Net-(IC1-+)"
+    "unconnected-(IC1-NC-Pad8)" "unconnected-(IC1-NC-Pad5)" "unconnected-(IC1-NC-Pad1)" "unconnected-(IC2-NIC_2-Pad3)" "unconnected-(IC2-NIC_3-Pad5)" "unconnected-(IC2-NIC_1-Pad1)" "unconnected-(IC2-NIC_4-Pad7)" "unconnected-(IC2-DNC-Pad8)"
+    "unconnected-(IC3-NC-Pad4)" "unconnected-(IC4-NC-Pad8)" "unconnected-(IC4-NC-Pad5)" "unconnected-(IC4-NC-Pad1)" "unconnected-(IC5-NC-Pad8)" "unconnected-(IC5-NC-Pad5)" "unconnected-(IC5-NC-Pad1)" "unconnected-(IC6-NC-Pad5)"
+    "unconnected-(IC6-NC-Pad1)" "unconnected-(IC6-NC-Pad8)" "unconnected-(IC7-NC-Pad5)" "unconnected-(IC7-NC-Pad1)" "unconnected-(IC7-NC-Pad8)" "Net-(IC8-SDOD{slash}~{ALERT})" "Net-(IC8-SDOB)" "Net-(IC8-SDOC)"
+    "Net-(IC8-SDOA)" "unconnected-(IC9-NC-Pad5)" "unconnected-(IC9-NC-Pad8)" "unconnected-(IC9-NC-Pad1)" "unconnected-(IC10-NC-Pad5)" "unconnected-(IC10-NC-Pad1)" "unconnected-(IC11-NC-Pad1)" "unconnected-(IC11-NC-Pad8)"
+    "unconnected-(IC11-NC-Pad5)" "unconnected-(IC12-NC-Pad5)" "unconnected-(IC12-NC-Pad1)" "unconnected-(IC12-NC-Pad8)" "Net-(IC13-SDOD{slash}~{ALERT})" "Net-(IC13-SDOC)" "Net-(IC13-SDOB)" "Net-(IC13-SDOA)"
+    /DAC/DAC.CS "unconnected-(IC15-IO_2-Pad7)" "unconnected-(IC15-IO_3-Pad8)" "unconnected-(IC15-IO_1-Pad6)" "Net-(IC16-JTAG_CLK)" "Net-(IC16-JTAG_TMS)" "Net-(IC16-JTAG_TDI)" "unconnected-(IC16-TX_CLK-Pad30)"
+    "unconnected-(IC16-CLK_OUT-Pad22)" "Net-(IC16-RBIAS)" "unconnected-(IC16-RESERVED_4-Pad16)" "Net-(IC16-JTAG_TDO)" "unconnected-(IC16-RESERVED_3-Pad9)" "unconnected-(IC16-RESERVED_2-Pad7)" "Net-(IC16-JTAG_TRSTN)" "unconnected-(IC16-RESERVED_1-Pad1)"
+    "Net-(IC17-D)" "Net-(IC17-Q)" "Net-(IC17-C)" "Net-(IC17-S)" "Net-(J2-VBUS)" "Net-(IC19B-+IN_B)" "Net-(IC19D-+IN_D)" "Net-(U9-REF)"
+    /Connectors/JTAG.TDI /USB/D+ "/USB/D-" /USB/OSCP /USB/OSCN /Connectors/JTAG.TDO /Connectors/UART.TX "Net-(J9-Pin_2)"
+    "Net-(J9-Pin_10)" /FPGA/USB.OE# /FPGA/USB.D2 /FPGA/USB.TXD /FPGA/USB.D0 /FPGA/USB.SWIUA /FPGA/USB.D7 /FPGA/USB.D4
+    /FPGA/USB.RXD /FPGA/USB.D1 /FPGA/USB.D6 /FPGA/USB.RD# /FPGA/USB.D5 /FPGA/USB.D3 /FPGA/USB.WR# /FPGA/USB.RXF#
+    /FPGA/USB.TXE# /FPGA/USB.CLKOUT "unconnected-(U9-BDBUS6-Pad45)" "unconnected-(U9-BCBUS5-Pad57)" "unconnected-(U9-BCBUS7-Pad59)" "unconnected-(U9-~{SUSPEND}-Pad36)" "unconnected-(U9-BCBUS4-Pad55)" "unconnected-(U9-BCBUS6-Pad58)"
+    "unconnected-(U9-~{PWREN}-Pad60)" "unconnected-(U9-BDBUS2-Pad40)" "unconnected-(U9-BCBUS3-Pad54)" "unconnected-(U9-ACBUS7-Pad34)" "unconnected-(U9-BDBUS3-Pad41)" "unconnected-(U9-BDBUS7-Pad46)" "unconnected-(U9-BCBUS0-Pad48)" "unconnected-(U9-VREGOUT-Pad49)"
+    "unconnected-(U9-VREGIN-Pad50)" "unconnected-(U9-BDBUS5-Pad44)" "unconnected-(U9-BDBUS4-Pad43)" "unconnected-(U9-BCBUS1-Pad52)" "unconnected-(U9-BCBUS2-Pad53)" "Net-(R69-Pad2)" "unconnected-(J9-Pin_8-Pad8)" "Net-(J9-Pin_4)"
+    "unconnected-(J9-Pin_7-Pad7)" "unconnected-(J9-Pin_6-Pad6)" "unconnected-(IC15-IO_70-Pad102)" "unconnected-(IC15-IO_69-Pad101)" "unconnected-(IC15-IO_74-Pad111)" "unconnected-(IC15-IO_75-Pad116)" "unconnected-(IC15-IO_73-Pad110)" "unconnected-(IC15-IO_64-Pad96)"
+    "unconnected-(IC15-IO_65-Pad97)" "unconnected-(IC15-IO_68-Pad100)" "unconnected-(IC15-IO_63-Pad93)" "unconnected-(IC15-IO_67-Pad99)" "unconnected-(IC15-IO_20-Pad33)" "unconnected-(IC15-IO_66-Pad98)" "unconnected-(IC15-IO_89-Pad140)" "unconnected-(IC15-IO_6-Pad12)"
+    "unconnected-(IC15-IO_86{slash}DEV_CLRN-Pad124)" "unconnected-(IC15-IO_90-Pad141)" "unconnected-(IC15-IO_83-Pad129)" "unconnected-(IC15-IO_85-Pad132)" "unconnected-(IC15-IO_11-Pad22)" "unconnected-(IC15-IO_45-Pad70)" "unconnected-(IC15-IO_44-Pad69)" "unconnected-(IC15-IO_12-Pad23)"
+    "unconnected-(IC15-IO_80-Pad123)" "unconnected-(IC15-IO_84-Pad131)" "unconnected-(IC15-IO_42-Pad65)" "unconnected-(IC15-IO_86-Pad133)" "unconnected-(IC15-IO_43-Pad66)" "unconnected-(IC15-IO_10-Pad21)" "unconnected-(IC15-IO_9-Pad20)" "unconnected-(IC15-IO_82-Pad127)"
+    "unconnected-(IC15-IO_87-Pad134)" "unconnected-(IC15-IO_5-Pad11)" "unconnected-(IC15-IO_87{slash}DEV_OE-Pad125)" "unconnected-(IC15-IO_88-Pad135)" "unconnected-(IC15-IO_8-Pad14)" "unconnected-(IC15-IO_4-Pad10)" "unconnected-(IC15-IO_7-Pad13)" "unconnected-(IC15-IO_81-Pad126)"
+    "unconnected-(IC10-NC-Pad8)" /Connectors/JTAG.EN /ADC2/ADC2.SCLK /ADC1/ADC1.SCLK
+    (clearance_class "kicad_default")
+    (via_rule "kicad_default")
+    (rule
+      (width 150.0)
+    )
+    (circuit 
+      (use_layer F.Cu In1.Cu In2.Cu B.Cu)
+    )
+  )
+)
